@@ -1,17 +1,19 @@
 # Postgres bootstrap
 
-Example on how to migrate/write-models/test with postgres from clojure
+Example of how to migrate/write-models/test with postgres from clojure
 
 ## Provisioning
 
     $ sudo apt-get install postgresql-9.3
     $ sudo -u postgres createuser juxt -P
-(passwd; "juxt_secret")
+
+(password; "juxt_secret")
+
     $ sudo -u postgres createdb juxt_db -O juxt
 
 ## Migrating schemas
 
-Run some code in migrations.clj
+Run some code in [migrations.clj](https://github.com/martintrojer/postgres-bootstrap/blob/master/src/migrations.clj#L38)
 
 ## Command Line
 
