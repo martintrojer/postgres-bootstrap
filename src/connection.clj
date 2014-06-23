@@ -18,6 +18,17 @@
                (.setJdbcUrl (str "jdbc:" (:subprotocol spec) ":" (:subname spec)))
                (.setUser (:user spec))
                (.setPassword (:password spec))
+
+               (.setMinPoolSize 1)
+               (.setMaxPoolSize 30)
+               (.setAcquireIncrement 1)
+               (.setPreferredTestQuery "select 1")
+
+               (.setTestConnectionOnCheckout true)
+               (.setCheckoutTimeout 7000)
+               (.setAcquireRetryAttempts 3)
+               (.setAcquireRetryDelay 1000)
+
                ;; expire excess connections after 30 minutes of inactivity:
                (.setMaxIdleTimeExcessConnections (* 30 60))
                ;; expire connections after 3 hours of inactivity:

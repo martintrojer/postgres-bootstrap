@@ -24,7 +24,7 @@
                               :columns [:name :branch_id]
                               :values [["brixton" "1234"]
                                        ["southwark" "5678"]]}))
-    (jdbc/execute! db-spec
+  (jdbc/execute! db-spec
                  (sql/format {:insert-into :site_user
                               :columns [:name :password]
                               :values [["agent1" "mutual"]    ;; TODO -- store password hashes
